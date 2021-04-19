@@ -35,7 +35,7 @@ const copyToClipboard = (text) => {
 const useDeviceAuth = async (deviceAuth) => {
   const { data: { access_token: accessToken } } = await axios({
     method: 'POST',
-    url: 'https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/token',
+    url: 'https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: 'basic MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE=',
@@ -80,7 +80,7 @@ const generateDeviceAuth = async (exchangeCode) => {
   return { accountId, deviceId, secret };
 };
 
-const getDeviceCode = async () => {
+const getDeviceAuth = async () => {
   const { data: { access_token: switchAccessToken } } = await axios({
     method: 'POST',
     url: 'https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/token',
